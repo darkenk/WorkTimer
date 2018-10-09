@@ -11,4 +11,7 @@ android:
 
     # The SDK version used to compile your project
     - android-27
-
+  licenses:
+    - 'android-sdk-preview-license-.+'
+    - 'android-sdk-license-.+'
+    - 'google-gdk-license-.+'
