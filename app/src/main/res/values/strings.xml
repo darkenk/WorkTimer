@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Work Timer</string>
+    <string name="working_status">Working</string>
+    <string name="not_working_status">Not working</string>
+    <string name="start_work">Start work</string>
+    <string name="end_work">End work</string>
 </resources>

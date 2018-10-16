@@ -10,6 +10,7 @@ class EndWork(private val timeProvider: TimeProvider, private val repository: Re
     
     class EndWorkException(message: String): RuntimeException(message)
     
+    @Throws(EndWorkException::class)
     fun endWork() {
         val lastEntry = repository.getLastEntry()
         if (lastEntry.type != EntryType.WorkStart) {
