@@ -11,9 +11,14 @@ import org.darkenk.worktimer.presenter.IMainView
 import org.darkenk.worktimer.presenter.WorkPresenter
 import org.darkenk.worktimer.usecases.EndWork
 import org.darkenk.worktimer.usecases.GetCurrentWorkStatus
+import org.darkenk.worktimer.usecases.GetCurrentWorkTime
 import org.darkenk.worktimer.usecases.StartWork
 
 class MainActivity : AppCompatActivity(), IMainView {
+
+    override fun showWorkTime(time: String) {
+        tv_current_work_time.text = time
+    }
 
     override fun showIsWorking(working: Boolean) {
         tv_work_status.text = if (working) getString(R.string.working_status) else getString(R.string.not_working_status)
@@ -31,7 +36,7 @@ class MainActivity : AppCompatActivity(), IMainView {
         setContentView(R.layout.activity_main)
         
         workPresenter = WorkPresenter(EndWork(timeProvider, repository), GetCurrentWorkStatus(repository),
-                StartWork(timeProvider, repository), this)
+                StartWork(timeProvider, repository), GetCurrentWorkTime(timeProvider, repository), this)
         
         workPresenter.init()
         

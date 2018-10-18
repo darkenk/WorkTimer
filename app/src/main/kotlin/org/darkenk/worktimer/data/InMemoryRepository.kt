@@ -20,6 +20,6 @@ class InMemoryRepository : Repository {
     }
     
     override fun getEntries(from: Long, to: Long): List<WorkEntry> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return workEntries.filter { it.time in from..to }
     }
 }
