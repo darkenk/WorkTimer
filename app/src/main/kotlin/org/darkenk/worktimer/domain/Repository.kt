@@ -4,6 +4,7 @@ package org.darkenk.worktimer.domain
 interface Repository {
     fun getLastEntry(): WorkEntry
     fun save(workEntry: WorkEntry)
+    fun getEntries(from: Long, to: Long): List<WorkEntry>
 }
 
 enum class EntryType(val type: Int) {

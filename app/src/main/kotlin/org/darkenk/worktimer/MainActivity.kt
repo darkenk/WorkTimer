@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity(), IMainView {
         bt_start_stop_work.text = if (working) getString(R.string.end_work) else getString(R.string.start_work)
     }
 
-    lateinit var workPresenter: WorkPresenter
+    private lateinit var workPresenter: WorkPresenter
     
     private val timeProvider: TimeProvider = RealTimeProvider()
     
